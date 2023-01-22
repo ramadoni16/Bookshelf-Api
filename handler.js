@@ -2,7 +2,6 @@ const { nanoid } = require("nanoid");
 // console.log(nanoid(16));
 const book = require("./book");
 
-// INI UNTUK TAMBAH BUKU
 const tambahBuku = (request, handle) => {
   const { name, year, author, summary, publisher, pageCount, readPage, reading } = request.payload;
 
@@ -71,7 +70,6 @@ const tambahBuku = (request, handle) => {
   return response;
 };
 
-// INI UNTUK MENAMPILKAN SEMUA BUKU
 const getAllBuku = async (request, handle) => {
   const { name, reading, finished } = request.query;
 
@@ -104,7 +102,6 @@ const getAllBuku = async (request, handle) => {
   return response;
 };
 
-// INI UNTUK MENGAMBIL DATA BUKU BERDASARKAN ID
 const getByIdBuku = (request, handle) => {
   const { id } = request.params;
   const books = book.filter((b) => b.id === id)[0];
@@ -127,7 +124,6 @@ const getByIdBuku = (request, handle) => {
   return response;
 };
 
-// INI FUNGSI UNTUK EDIT BERDASARKAN ID
 const editBukuById = async (request, handle) => {
   const { id } = request.params;
 
